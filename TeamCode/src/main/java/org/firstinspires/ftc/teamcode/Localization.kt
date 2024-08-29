@@ -48,9 +48,9 @@ interface ILocalizer {
 }
 
 class Holo3WheelLocalizer(hwMap: HardwareMap) : ILocalizer {
-    val lEnc = WheelEncoder(Encoder(hwMap, "MotorBR"), WhlR, TPR)
-    val rEnc = WheelEncoder(Encoder(hwMap, "MotorFL"), WhlR, TPR)
-    val cEnc = WheelEncoder(Encoder(hwMap, "MotorFR").reversed(), WhlR, TPR)
+    val lEnc = WheelEncoder(Encoder(hwMap, "MotorBR").reversed, WhlR, TPR)
+    val rEnc = WheelEncoder(Encoder(hwMap, "MotorFL").reversed, WhlR, TPR)
+    val cEnc = WheelEncoder(Encoder(hwMap, "MotorFR")(), WhlR, TPR)
 
     override fun readIncr() = Odometry.holo3WheelIncr(
         lIncr = lEnc.readIncr(),

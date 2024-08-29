@@ -105,8 +105,8 @@ class MecanumDrive(hardwareMap: HardwareMap) : IDriveController {
             motor.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
         }
 
-        motorFL.direction = DcMotorSimple.Direction.REVERSE
-        motorBL.direction = DcMotorSimple.Direction.REVERSE
+        motorFR.direction = DcMotorSimple.Direction.REVERSE
+        motorBR.direction = DcMotorSimple.Direction.REVERSE
 
         localizer = Holo3WheelLocalizer(hardwareMap)
     }
